@@ -9,8 +9,7 @@ using namespace std;
 
 double calAvg(string strMark);
 char calGrade(double avg);
-int main() {
-	
+int main() {	
 	// 1. write into a txt file
 	ofstream fout;
 	fout.open("myfile.txt");
@@ -22,16 +21,14 @@ int main() {
 	fout << "This is the second line..." << endl;
 	int a = 10;
 	double p = 87.87;
-	fout << "a = " << a << ", p = " << p << endl;
-	
+	fout << "a = " << a << ", p = " << p << endl;	
 	fout.close();
 	
 	// 2. read in from a (normal) txt file
 	/* 
 	20 30 50
 	60 700 98 123 444
-	*/
-	
+	*/	
 	ifstream fin;
 	fin.open('myfile.txt');
 	int val;
@@ -62,9 +59,10 @@ int main() {
 
 
 	cout << setw(15) << left << "Name" << " "
-		 << setw(7) << left << "Average" << " "
-		 << setw(5) << left << "Grade" << endl;
+             << setw(7) << left << "Average" << " "
+	     << setw(5) << left << "Grade" << endl;
 	cout << string(30, '-') << endl;;
+	
 	while (!fin2.eof()) {
 		getline(fin2, line);
 		//cout << line << endl;
@@ -76,13 +74,10 @@ int main() {
 		char grade = calGrade(avg);
 
 		cout << setw(15) << left << name << " "
-			 << setw(7) << setprecision(2) << fixed << avg << " "
-			 << setw(5) << right << grade << endl;
-
+	             << setw(7) << setprecision(2) << fixed << avg << " "
+		     << setw(5) << right << grade << endl;
 	}
-	fin2.close();
-	
-	system("pause");
+	fin2.close();	
 	return 0;
 }
 
@@ -94,16 +89,12 @@ double calAvg(string strMark) {
 	double sum = 0;
 	while (!iss2.eof()) {
 		getline(iss2, num, ',');
-		sum += atoi(num.c_str());
+		sum += atoi(num.c_str()); //should use C string rather than C++ string
 	}
 	return sum / 3;
 }
 
 char calGrade(double avg) {
-	if (avg >= 80) {
-		return 'A';
-	}
-	else {
-		return 'B';
-	}
+	if (avg >= 80) return 'A';
+	else return 'B';
 }
