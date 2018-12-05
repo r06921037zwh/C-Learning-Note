@@ -15,15 +15,15 @@ int main() {
 
 
 	//3. cin uses " " as delimiters 
-	//4.  To read in full sentence, use getline
+	//4. To read in full sentence, use getline
 	string name;
-	//cin >> name;
 	cout << "Input your name : " << endl;
+	//cin >> name;
 	getline(cin, name);
 	cout << "Name is " << name << endl;
 
 
-	//5. string slice
+	//5. string slice, use [] or at() method
 	string str4 = "Hello World";
 	cout << str4.at(0) << ", " << str4.at(str4.length() - 1) << endl;
 	cout << str4[0] << ", " << str4[str4.length() - 1] << endl;
@@ -83,7 +83,7 @@ int main() {
 	cout << str7 << endl;
 
 	string str8 = "Today is not my day";
-	str8.erase(str8.begin() + 9, str8.end() - 6);
+	str8.erase(str8.begin() + 9, str8.end() - 6); // specified position
 	cout << str8 << endl;
 
 	string str9 = "A Little Boy";
