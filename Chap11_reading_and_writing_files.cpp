@@ -47,10 +47,10 @@ int main() {
 	
 	// 3. read in a structured txt
 	/*
-	John:70, 80, 90
-	Terry : 65, 79, 93
-	Martha : 40, 70, 99
-	Charlie : 99, 78, 89
+	John:70,80,90
+	Terry:65,79,93
+	Martha:40,70,99
+	Charlie:99,78,89
 	*/
 	ifstream fin2;
 	fin2.open("myfile.txt");
